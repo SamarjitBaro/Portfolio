@@ -14,7 +14,7 @@ const Frame = ({ scrollHeight, numFrames, width, height, animationStartY }) => {
     for (let i = 1; i <= numFrames; i++) {
       const img = new Image();
       // const imgSrc = getCurrentFrame(i);
-      img.src = `/src/video/frame_${i.toString().padStart(4, "0")}.jpg`;
+      img.src = `/video/frame_${i.toString().padStart(4, "0")}.jpg`;
       setImages((prevImages) => [...prevImages, img]);
     }
   }
@@ -98,3 +98,13 @@ const Frame = ({ scrollHeight, numFrames, width, height, animationStartY }) => {
   );
 };
 export default Frame;
+
+
+
+
+
+
+
+
+
+

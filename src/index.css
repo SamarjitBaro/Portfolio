@@ -160,3 +160,10 @@
 
   background-color: #424546;
 }
+.preloader{
+  background: black url(assets/21.gif) no-repeat center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}

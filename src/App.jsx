@@ -10,6 +10,17 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
 import Projects from "./projects";
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoaded(true);
+    };
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   const [startAnimation, setStartAnimation] = useState(false);
 
   // Define animation start point (after 6 sections)
@@ -116,116 +127,122 @@ function App() {
 
   return (
     <>
-      <div
-        onMouseMove={handleMouse}
-        className="h-[100vh] hero relative flex cursor-none  bg-[#EAEAEA] overflow-hidden text-black"
-      >
-        <div className="bg-[#1F1F1F] px-6 py-[60px]  about  md:flex items-center flex-col top-0 h-[100%] w-[50%] right-0 hidden  absolute">
-          <h2 className="z-20 md:mt-14 about">About Me</h2>
-          <div className="px-[80px] z-20 mt-[20px]">
-            <p className=" para">
-              "I’m a freelance frontend developer with experience in HTML, CSS,
-              JavaScript, React, Tailwind CSS, AJAX, Git, Canvas and creative
-              tools like GSAP, SwiperJS, and Framer Motion. <br />
-            </p>
-            <div className="flex flex-col items-center mt-16  justify-center">
-              <p className="mt-10 skill">Skills</p>
-              <div className=" flex gap-16 mt-10  justify-center">
-                <div className="flex items-center flex-col logoR ">
-                  <FaReact className="" />
-                  <h4 className="react ">React</h4>
-                </div>
-                <div className="flex items-center flex-col logoJ  ">
-                  <RiJavascriptFill className="" />
-                  <h4 className="react  ">Javascript</h4>
-                </div>
-                <div className="flex items-center flex-col logoH ">
-                  <TiHtml5 className="" />
-                  <h4 className="react  ">Html</h4>
-                </div>
-                <div className="flex items-center flex-col  logoC ">
-                  <IoLogoCss3 className="" />
-                  <h4 className="react ">Css</h4>
+      {!isLoaded ? (
+        <div className="preloader"></div>
+      ) : (
+        <div>
+          <div
+            onMouseMove={handleMouse}
+            className="h-[100vh] hero relative flex cursor-none  bg-[#EAEAEA] overflow-hidden text-black"
+          >
+            <div className="bg-[#1F1F1F] px-6 py-[60px]  about  md:flex items-center flex-col top-0 h-[100%] w-[50%] right-0 hidden  absolute">
+              <h2 className="z-20 md:mt-14 about">About Me</h2>
+              <div className="px-[80px] z-20 mt-[20px]">
+                <p className=" para">
+                  "I’m a freelance frontend developer with experience in HTML,
+                  CSS, JavaScript, React, Tailwind CSS, AJAX, Git, Canvas and
+                  creative tools like GSAP, SwiperJS, and Framer Motion. <br />
+                </p>
+                <div className="flex flex-col items-center mt-16  justify-center">
+                  <p className="mt-10 skill">Skills</p>
+                  <div className=" flex gap-16 mt-10  justify-center">
+                    <div className="flex items-center flex-col logoR ">
+                      <FaReact className="" />
+                      <h4 className="react ">React</h4>
+                    </div>
+                    <div className="flex items-center flex-col logoJ  ">
+                      <RiJavascriptFill className="" />
+                      <h4 className="react  ">Javascript</h4>
+                    </div>
+                    <div className="flex items-center flex-col logoH ">
+                      <TiHtml5 className="" />
+                      <h4 className="react  ">Html</h4>
+                    </div>
+                    <div className="flex items-center flex-col  logoC ">
+                      <IoLogoCss3 className="" />
+                      <h4 className="react ">Css</h4>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              style={{
+                backgroundColor: color, // Dynamically change the background color
+                transition: "background-color 0.5s ease", // Smooth transition for color change
+              }}
+              className=" h-[20px] hidden md:block w-[20px] rounded-[50%] absolute z-10 greeen"
+            ></div>
+            <div className="relative  md:mt-3 h-screen md:h-[25vw] md:py-24 pt-[10vh] px-[55px] rounded md:bg-transparent bg-[#1F1F1F]">
+              <h1 className="leading-none text-[#CDCDCD] md:text-[#1F1F1F] z-20  f1 text-[9vw]">
+                Hey
+                <br /> I'm Samar
+              </h1>
+              <h3 className="fr absolute f2 hidden md:block right-20 mt-[1px] z-10 text-[1.5vw]">
+                Frontend-developer | Creative-developer
+              </h3>
+
+              <p className="text-[#CDCDCD] block md:hidden mt-10">
+                "I’m a passionate freelance frontend developer with experience
+                in HTML, CSS, JavaScript, React, Tailwind CSS, AJAX, Git, Canvas
+                and creative tools like GSAP, SwiperJS, and Framer Motion.
+                <br />I love taking on new challenges and enjoy finding creative
+                solutions to build better online experiences."
+              </p>
+              <div className="absolute z-20 flex justify-center w-[80%] text-green-500 gap-16 bottom-32 md:text-[#606060b1]  md:bottom-[-180px]">
+                <a
+                  href="mailto:xamarbro10@gmail.com"
+                  target="blank"
+                  className="cursor-none"
+                >
+                  <MdEmail
+                    className="size-9 md:email  "
+                    onMouseEnter={(e) => moveIn(e)}
+                    onMouseLeave={(e) => moveOut(e)}
+                  />
+                </a>
+                <a
+                  href="https://github.com/SamarjitBaro"
+                  target="blank"
+                  className="cursor-none"
+                >
+                  <FaGithub
+                    className="size-9 md:email   "
+                    onMouseEnter={(e) => moveIn(e)}
+                    onMouseLeave={(e) => moveOut(e)}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/samarjit-baro-b33734239"
+                  className="cursor-none"
+                  target="blank"
+                >
+                  <FaLinkedin
+                    className="size-9 md:email  "
+                    onMouseEnter={(e) => moveIn(e)}
+                    onMouseLeave={(e) => moveOut(e)}
+                  />
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: color, // Dynamically change the background color
-            transition: "background-color 0.5s ease", // Smooth transition for color change
-          }}
-          className=" h-[20px] hidden md:block w-[20px] rounded-[50%] absolute z-10 greeen"
-        ></div>
-        <div className="relative  md:mt-3 h-screen md:h-[25vw] md:py-24 pt-[10vh] px-[55px] rounded md:bg-transparent bg-[#1F1F1F]">
-          <h1 className="leading-none text-[#CDCDCD] md:text-[#1F1F1F] z-20  f1 text-[9vw]">
-            Hey
-            <br /> I'm Samar
-          </h1>
-          <h3 className="fr absolute f2 hidden md:block right-20 mt-[1px] z-10 text-[1.5vw]">
-            Frontend-developer | Creative-developer
-          </h3>
 
-          <p className="text-[#CDCDCD] block md:hidden mt-10">
-            "I’m a passionate freelance frontend developer with experience in
-            HTML, CSS, JavaScript, React, Tailwind CSS, AJAX, Git, Canvas and
-            creative tools like GSAP, SwiperJS, and Framer Motion.
-            <br />I love taking on new challenges and enjoy finding creative
-            solutions to build better online experiences."
-          </p>
-          <div className="absolute z-20 flex justify-center w-[80%] text-green-500 gap-16 bottom-32 md:text-[#606060b1]  md:bottom-[-180px]">
-            <a
-              href="mailto:xamarbro10@gmail.com"
-              target="blank"
-              className="cursor-none"
-            >
-              <MdEmail
-                className="size-9 md:email  "
-                onMouseEnter={(e) => moveIn(e)}
-                onMouseLeave={(e) => moveOut(e)}
+          <div className="flex bg-[#EAEAEA]  h-[230vh]">
+            {startAnimation && (
+              <Frame
+                animationStartY={animationStartPoint}
+                scrollHeight={scrollHeight}
+                numFrames={287}
+                width={window.innerWidth}
+                height={window.innerHeight}
               />
-            </a>
-            <a
-              href="https://github.com/SamarjitBaro"
-              target="blank"
-              className="cursor-none"
-            >
-              <FaGithub
-                className="size-9 md:email   "
-                onMouseEnter={(e) => moveIn(e)}
-                onMouseLeave={(e) => moveOut(e)}
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/samarjit-baro-b33734239"
-              className="cursor-none"
-              target="blank"
-            >
-              <FaLinkedin
-                className="size-9 md:email  "
-                onMouseEnter={(e) => moveIn(e)}
-                onMouseLeave={(e) => moveOut(e)}
-              />
-            </a>
+            )}
           </div>
+
+          <Projects />
+          <footer className="bg-black h-[41px]">zczxc</footer>
         </div>
-      </div>
-
-      <div className="flex bg-[#EAEAEA]  h-[230vh]">
-        {startAnimation && (
-          <Frame
-            animationStartY={animationStartPoint}
-            scrollHeight={scrollHeight}
-            numFrames={287}
-            width={window.innerWidth}
-            height={window.innerHeight}
-          />
-        )}
-      </div>
-
-      <Projects />
-      <footer className="bg-black h-[41px]">zczxc</footer>
+      )}
     </>
   );
 }

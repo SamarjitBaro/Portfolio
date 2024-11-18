@@ -15,11 +15,7 @@ const Projects = () => {
       <span className="md:text-[1.1vw] text-[4vw]">(AI-based)</span>
     </div>,
   ];
-  const images = [
-    "/src/images/img2.jpeg",
-    "/src/images/img1.jpeg",
-    "/src/assets/med.png",
-  ];
+  const images = ["/images/img2.jpeg", "/images/img1.jpeg", "/images/med.png"];
   const texts = [
     // eslint-disable-next-line react/jsx-key
     <div>
