@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: saol;
+  src: url("/src/font/PPNeueMontreal-Book.woff2");
+}
+@font-face {
+  font-family: saol2;
+  src: url("/src/font/PPNeueMontreal-SemiBold.woff2");
+}
+@font-face {
+  font-family: saol3;
+  src: url("/src/font/PPNeueMontreal-Thin.woff2");
+}
+/* .navlist {
+  border: 1px solid rgb(117, 115, 115);
+  padding: 2px 12px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.navlist::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.998);
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+}
+
+.navlist:hover::after {
+  bottom: 0;
+  border-radius: 0;
+  z-index: 0;
+}
+
+.navlist:hover h4 {
+  color: white;
+  position: relative;
+  z-index: 9;
+  transition: all ease 0.3s;
+}
+
+.navlist a h4 {
+  position: relative;
+  font-weight: 300;
+  color: black;
+}
+.navlist a,
+.navlist h4 {
+  pointer-events: none;
+} */
+
+.hero {
+  border-bottom: 1.4px solid rgb(155, 152, 152);
+  padding: 10px;
+}
+.f1 {
+  font-family: saol2;
+  font-weight: 400;
+}
+.f2 {
+  font-family: saol2;
+  font-weight: 600;
+}
+.greeen {
+  transform: translate(0, 0);
+  /* color: #025902; */
+}
+.about {
+  font-family: saol2;
+  font-size: 32px;
+  color: rgb(159, 161, 163);
+}
+.para {
+  font-family: saol;
+  font-size: 20px;
+  color: rgb(175, 177, 180);
+  margin-top: 20px;
+  transition: color 0.4s ease-in-out;
+  letter-spacing: 1.5px;
+}
+.skill {
+  font-family: saol2;
+  font-weight: 100;
+  font-size: 32px;
+}
+.para:hover {
+  color: rgb(230, 225, 225);
+}
+
+.fr {
+  border-top: 1px solid black;
+  font-family: saol;
+  color: #606060;
+  letter-spacing: 1px;
+}
+.react {
+  font-family: saol2;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.logoR:hover {
+  color: #03d1f6;
+}
+.logoJ:hover {
+  color: #e8d44d;
+}
+.logoH:hover {
+  color: #ee612b;
+}
+.logoC:hover {
+  color: #2d53e5;
+}
+
+.prj1 {
+  font-family: saol2;
+  color: #dad8d893;
+}
+.lnr {
+  background: radial-gradient(#9fb48e4c 10%, #1a1a1a 100%);
+}
+
+.hoverer {
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  border-radius: 3px;
+}
+
+.hoverer:hover {
+  transform: scale(0.999);
+
+  border: 10px radial-gradient(#9fb48e4c 10%, #1a1a1a 100%);
+  /* border-radius: px; */
+}
+.ss {
+  font-family: saol2;
+}
+.ss2 {
+  font-family: saol;
+  /* font-size: 20px; */
+  color: rgb(175, 177, 180);
+  margin-top: 20px;
+  transition: color 0.4s ease-in-out;
+  /* letter-spacing: 1.5px; */
+}
+.r {
+  border: 1px solid white;
+  padding: 0 10px;
+  border-radius: 20px;
+  width: fit-content;
+
+  background-color: #424546;
+}
