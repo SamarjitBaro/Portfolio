@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const heads = [
+    "Nexcent",
     "AI-translator",
     "Drawing Board",
     // eslint-disable-next-line react/jsx-key
@@ -14,9 +15,33 @@ const Projects = () => {
       Medicine Info Extraction <br />
       <span className="md:text-[1.1vw] text-[4vw]">(AI-based)</span>
     </div>,
+    "Weather-Forecast",
+    // eslint-disable-next-line react/jsx-key
+    <div className=" leading-none">
+      Food-Corner <br />
+      <span className="md:text-[1.1vw] text-[4vw]">(Feb 2024-March 2024)</span>
+    </div>,
   ];
-  const images = ["/images/img2.jpeg", "/images/img1.jpeg", "/images/med.png"];
+  const images = [
+    "/images/s1.png",
+    "/images/img3.png",
+    "/images/ss.png",
+    "/images/med.png",
+    "/images/weather.png",
+    "/images/chef.jpeg",
+  ];
   const texts = [
+    // eslint-disable-next-line react/jsx-key
+    <div className="md:mt-2 ">
+      A sleek and responsive landing page built with Next.js, optimized and
+      fully responsive for seamless user experience across all devices.
+      <br />
+      <div className="md:flex hidden gap-4 justify-center md:mt-8">
+        <div className="r "># NextJs</div>
+        <div className="r ">#Css</div>
+        <div className="r ">#Javascript</div>
+      </div>
+    </div>,
     // eslint-disable-next-line react/jsx-key
     <div>
       Developed with React, MyMemory Translator API, and the Web Speech API for
@@ -60,18 +85,55 @@ const Projects = () => {
         <div className="r ">#Colab</div>
       </div>
     </div>,
+    // eslint-disable-next-line react/jsx-key
+    <div className="md:mt-2 ">
+      A weather app using the forecast API to provide real time temperature,
+      humidity and wind speed for any location. Users can enter their city name
+      and get instant reliable updates.
+      <br />
+      <div className="md:flex hidden gap-4 justify-center md:mt-8">
+        <div className="r "># Html5</div>
+        <div className="r ">#Css</div>
+        <div className="r ">#Javascript</div>
+        <div className="r ">#Rest-Api</div>
+      </div>
+    </div>,
+    // eslint-disable-next-line react/jsx-key
+    <div className="md:mt-2 ">
+      Worked as a freelance website project using a blend of technologies.
+      Crafted the site with HTML, CSS, and JavaScript, integrating EmailJS for
+      email management, and Leaflet for seamless map functionality. The design
+      process involved Figma, and the site was successfully deployed on Netlify.
+      <br />
+      <div className="md:flex hidden gap-4 justify-center md:mt-8">
+        <div className="r "># Html5</div>
+        <div className="r ">#Css</div>
+        <div className="r ">#Javascript</div>
+        <div className="r ">#Leaflet</div>
+      </div>
+    </div>,
   ];
   const links1 = [
+    "https://nexcent-ap.netlify.app/",
     "https://ai-translatio.netlify.app/",
     "https://drawingboard-78.netlify.app/",
     "https://github.com/SamarjitBaro/Med_Test/blob/master/Information_extraction.ipynb",
+    "https://weather-forecast-32edde.netlify.app/",
+    "https://foodcorner-eb920d.netlify.app/",
   ];
   const links2 = [
+    "https://github.com/SamarjitBaro/Nexcent-Responsive-Website-Demo-",
     "https://github.com/SamarjitBaro/Ai-translator",
     "https://github.com/SamarjitBaro/Canvas-Drawing-Board",
     "https://github.com/SamarjitBaro/Med_Test/blob/master/Information_extraction.ipynb",
   ];
-  const arefs = [<GoLinkExternal />, <GoLinkExternal />, ""];
+  const arefs = [
+    <GoLinkExternal />,
+    <GoLinkExternal />,
+    "",
+    <GoLinkExternal />,
+    <GoLinkExternal />,
+  ];
   const aref2 = [<FaGithub />, <FaGithub />, <FaGithub />];
 
   useEffect(() => {
@@ -96,7 +158,7 @@ const Projects = () => {
       <div className="h-[100px] border-none flex items-center justify-center sticky top-0 bg-black">
         <h2 className="    text-[5vw] prj1">Projects</h2>
       </div>
-      <div className="h-auto mt-[-21px] bg-black">
+      <div className="h-[413vh] lg:h-auto mt-[-21px] bg-black">
         <div className="prj   ">
           {images.map((image, index) => {
             const text = texts[index]; // Get the corresponding text using the index
@@ -108,13 +170,13 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className="card flex-wrap md:flex-nowrap z-30 mt-5 rounded-2xl sticky top-[15vh] px-[10px] md:px-[40px] flex items-center md:gap-16 w-[90vw] h-[80vh] m-0 mx-auto"
+                className="card flex-wrap lg:flex-nowrap z-30 mt-5 rounded-2xl sticky top-[15vh] px-[10px] lg:px-[40px] flex items-center lg:gap-16 w-[90vw] h-[80vh] m-0 mx-auto"
               >
                 {/* Image Section */}
-                <div className="rounded images h-[30vh] w-[90vw] md:h-[70vh] md:w-[40vw]">
+                <div className="rounded images h-[30vh] w-[90vw] lg:h-[70vh] lg:w-[40vw]">
                   <a href={link} target="blank">
                     <img
-                      className="w-[100%] h-[100%] hoverer filter brightness(0.85)"
+                      className="w-[100%] h-[100%]  hoverer filter brightness(0.85)"
                       src={image}
                       alt="images of projects"
                     />
@@ -122,13 +184,13 @@ const Projects = () => {
                 </div>
                 {/* Text Section */}
                 {text && (
-                  <div className="h-[35vh]  px-4 py-3 flex-col  md:px-12 md:py-8 w-[90vw] md:h-[70vh] md:w-[40vw] rounded images flex   items-center lnr text-white">
+                  <div className="h-auto   px-4 py-3 flex-col  lg:px-12 lg:py-8 w-[90vw] lg:h-[70vh] lg:w-[40vw] rounded images flex   items-center lnr text-white">
                     {head && (
-                      <h1 className="text-[6vw]  text-[#CDCDCD] md:text-[3vw] ss">
+                      <h1 className="text-[6vw]  text-[#CDCDCD] lg:text-[3vw] ss">
                         {head}
                       </h1>
                     )}
-                    <p className="text-[3.5vw] text-[#CDCDCD] md:text-[20px] mt-3 ss2">
+                    <p className="text-[3.5vw] text-[#CDCDCD] lg:text-[1.2vw] mt-1 ss2">
                       {text}
                     </p>
                     <div className="flex justify-start  w-[100%] gap-5 items-center py-6">
@@ -142,7 +204,7 @@ const Projects = () => {
                           className="text-blue-500  animate-bounce underline mt-2"
                         >
                           {aref && (
-                            <div className="text-[6vw] md:text-[2vw]">
+                            <div className="text-[6vw] lg:text-[2vw]">
                               {aref}
                             </div>
                           )}
@@ -157,7 +219,7 @@ const Projects = () => {
                           className="text-blue-500 animate-pulse underline mt-2"
                         >
                           {arefss && (
-                            <div className="text-[6vw] md:text-[2vw]">
+                            <div className="text-[6vw] lg:text-[2vw]">
                               {arefss}
                             </div>
                           )}
